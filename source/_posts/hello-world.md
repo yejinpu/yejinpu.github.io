@@ -1,5 +1,5 @@
 ---
-title: he
+title: ES6更新汇总（一）
 tags: ES6
 categories: javascript
 ---
