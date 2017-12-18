@@ -2240,7 +2240,7 @@ pre .javascript .function {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 2080;
+  z-index: 998;
   background-color: rgba(0,0,0,0.3);
 }
 .local-search-popup {
