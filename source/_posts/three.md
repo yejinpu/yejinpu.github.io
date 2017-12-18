@@ -14,7 +14,7 @@ categories: 移动端
 
 **解决办法：**
 &emsp;&emsp;使用加载`canvas`的方法来加载图片。具体的canvasAPI参见：  
-[http://www.w3school.com.cn/tags/html_ref_canvas.asp](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
+http://www.w3school.com.cn/tags/html_ref_canvas.asp
 
 # 3、防止手机中网页放大和缩小  
 
