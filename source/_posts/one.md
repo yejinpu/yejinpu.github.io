@@ -1,5 +1,6 @@
 ---
 title: ES6更新汇总（一）
+date: 2017-12-15 18:44:46
 tags: ES6
 categories: javascript
 ---
