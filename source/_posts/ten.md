@@ -34,7 +34,7 @@ tags:
   deploy:
   type: git
   repo: git@github.com:XXX.git
-  branch: maste
+  branch: master
 ```
 * 执行`hexo g -d`完成部署，部署会延迟几十秒，稍后打开github页面即可查看。  
 
