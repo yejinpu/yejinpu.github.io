@@ -70,6 +70,21 @@
       </tags>
   </entry>
   <entry>
+    <title>vue实现跨域方法总结</title>
+    <url>/four.html</url>
+    <content><![CDATA[<p><strong>这里总结了三个方法：</strong>  </p>
+<p>1、让后台人员更改服务器header信息</p>
+<p>2、引入jquery的jsonp请求</p>
+<p>3、在vue项目的config下index.js文件中修改proxytable配置，具体代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">&#x27;/api&#x27;: &#123; //使用&quot;/api&quot;来代替&quot;http://f.apiplus.c&quot;</span><br><span class="line">target: &#x27;http://f.apiplus.cn&#x27;, //源地址</span><br><span class="line">changeOrigin: true, //改变源</span><br><span class="line">pathRewrite: &#123;</span><br><span class="line">  &#x27;^/api&#x27;: &#x27;http://f.apiplus.cn&#x27; //路径重写</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>跨域</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用gulp + babel实现es6编译es5</title>
     <url>/five.html</url>
     <content><![CDATA[<h1 id="1、安装node环境"><a href="#1、安装node环境" class="headerlink" title="1、安装node环境"></a>1、安装node环境</h1><p>&emsp;&emsp;<strong>在nodejs官网下载稳定版客户端，链接地址为 <code>https://nodejs.org/en/</code></strong></p>
@@ -85,21 +100,6 @@
       <tags>
         <tag>ES6</tag>
         <tag>gulp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue实现跨域方法总结</title>
-    <url>/four.html</url>
-    <content><![CDATA[<p><strong>这里总结了三个方法：</strong>  </p>
-<p>1、让后台人员更改服务器header信息</p>
-<p>2、引入jquery的jsonp请求</p>
-<p>3、在vue项目的config下index.js文件中修改proxytable配置，具体代码如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">&#x27;/api&#x27;: &#123; //使用&quot;/api&quot;来代替&quot;http://f.apiplus.c&quot;</span><br><span class="line">target: &#x27;http://f.apiplus.cn&#x27;, //源地址</span><br><span class="line">changeOrigin: true, //改变源</span><br><span class="line">pathRewrite: &#123;</span><br><span class="line">  &#x27;^/api&#x27;: &#x27;http://f.apiplus.cn&#x27; //路径重写</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>跨域</tag>
       </tags>
   </entry>
   <entry>
