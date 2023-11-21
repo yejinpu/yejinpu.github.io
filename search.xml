@@ -839,4 +839,77 @@ const命令用来声明常量，一定要初始化。
         <tag>ES6</tag>
       </tags>
   </entry>
+  <entry>
+    <title>webpack技术点汇总</title>
+    <url>/fourteen.html</url>
+    <content><![CDATA[<h1 id="一、基本项目框架"><a href="#一、基本项目框架" class="headerlink" title="一、基本项目框架"></a>一、基本项目框架</h1><h2 id="1-1-安装node"><a href="#1-1-安装node" class="headerlink" title="1.1 安装node"></a>1.1 安装node</h2><p>去官网下载稳定版本node即可。</p>
+<h2 id="1-2-使用node自带的npm-pnpm包管理工具初始化项目"><a href="#1-2-使用node自带的npm-pnpm包管理工具初始化项目" class="headerlink" title="1.2 使用node自带的npm&#x2F;pnpm包管理工具初始化项目"></a>1.2 使用node自带的npm&#x2F;pnpm包管理工具初始化项目</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<p>会生成一个初始的package.json配置文件,内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;myproject&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-安装webpack相关依赖"><a href="#1-3-安装webpack相关依赖" class="headerlink" title="1.3 安装webpack相关依赖"></a>1.3 安装webpack相关依赖</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install webpack webpack-cli --save-dev </span><br></pre></td></tr></table></figure>
+<h2 id="1-4-手动创建基础文件"><a href="#1-4-手动创建基础文件" class="headerlink" title="1.4 手动创建基础文件"></a>1.4 手动创建基础文件</h2><p>在项目路径下创建以下文件</p>
+<blockquote>
+<p>webpack.config.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">mode</span>: <span class="string">&#x27;none&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>.&#x2F;src&#x2F;index.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//空</span></span><br></pre></td></tr></table></figure>
+<p>进行这一步之后就可以使用webpack打包项目了。</p>
+<h2 id="1-5-打包项目"><a href="#1-5-打包项目" class="headerlink" title="1.5 打包项目"></a>1.5 打包项目</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
+<p>生成了.&#x2F;dist文件夹。</p>
+<p>到此为止，一个基于webpack的最初级项目已经搭建完成。</p>
+<h1 id="二、项目常用loader介绍"><a href="#二、项目常用loader介绍" class="headerlink" title="二、项目常用loader介绍"></a>二、项目常用loader介绍</h1><h2 id="2-1-编译html文件"><a href="#2-1-编译html文件" class="headerlink" title="2.1 编译html文件"></a>2.1 编译html文件</h2><p>使用<strong>html-loader</strong>加载器。</p>
+<blockquote>
+<p>.&#x2F;src&#x2F;index.html</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>.&#x2F;src&#x2F;index.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> html <span class="keyword">from</span> <span class="string">&#x27;./index.html&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>然后安装加载器</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install --save-dev html-loader</span><br></pre></td></tr></table></figure>
+<p>并在webpack.config.js中做如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">	<span class="attr">rules</span>: [&#123;</span><br><span class="line">		<span class="attr">test</span>: <span class="regexp">/\.html$/</span>,</span><br><span class="line">		<span class="attr">loader</span>: <span class="string">&#x27;html-loader&#x27;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行webpack进行打包，生成了dist文件夹，可以看到html文件已经被编译进入main.js</p>
+<h2 id="2-2-生成html文件"><a href="#2-2-生成html文件" class="headerlink" title="2.2 生成html文件"></a>2.2 生成html文件</h2><p>使用<strong>html-webpack-plugin</strong>插件。<br>安装插件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install --save-dev html-webpack-plugin</span><br></pre></td></tr></table></figure>
+<p>并在webpack.config.js中做如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">HtmlWebpackPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="attr">plugins</span>: [</span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">HtmlWebpackPlugin</span>(&#123;</span><br><span class="line">		<span class="attr">filename</span>: <span class="string">&#x27;index.html&#x27;</span></span><br><span class="line">	&#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>执行webpack进行打包，在dist文件中生成了独立的html文件，且已经自动引入了相应js文件。</p>
+<h2 id="2-3-编译且插入css文件"><a href="#2-3-编译且插入css文件" class="headerlink" title="2.3 编译且插入css文件"></a>2.3 编译且插入css文件</h2><p>使用<strong>css-loader</strong>加载器编译css文件，使用<strong>style-loader</strong>把编译好的css文件挂载到html文档的style标签下，这两个加载器往往一起使用。</p>
+<blockquote>
+<p>.&#x2F;src&#x2F;index.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> css <span class="keyword">from</span> <span class="string">&#x27;./index.css&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>然后安装加载器</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install --save-dev css-loader style-loader</span><br></pre></td></tr></table></figure>
+<p>并在webpack.config.js中做如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">	<span class="attr">rules</span>: [&#123;</span><br><span class="line">		<span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">		<span class="attr">use</span>: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>]</span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行webpack进行打包，打开在dist文件中生成的html文件能看到css样式效果。</p>
+<h2 id="2-4-编译less文件"><a href="#2-4-编译less文件" class="headerlink" title="2.4 编译less文件"></a>2.4 编译less文件</h2><p>使用<strong>less</strong>和<strong>less-loader</strong>加载器。</p>
+<blockquote>
+<p>.&#x2F;src&#x2F;index.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> less <span class="keyword">from</span> <span class="string">&#x27;./index.less&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>然后安装加载器</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install --save-dev less less-loader</span><br></pre></td></tr></table></figure>
+<p>并在webpack.config.js中做如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">	<span class="attr">rules</span>: [&#123;</span><br><span class="line">		<span class="attr">test</span>: <span class="regexp">/\.less$/</span>,</span><br><span class="line">		<span class="attr">use</span>: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>, <span class="string">&#x27;less-loader&#x27;</span>]</span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行webpack进行打包，打开在dist文件中生成的html文件能看到less样式效果。</p>
+<h2 id="2-4-编译含有ES6代码的js文件"><a href="#2-4-编译含有ES6代码的js文件" class="headerlink" title="2.4 编译含有ES6代码的js文件"></a>2.4 编译含有ES6代码的js文件</h2><p>使用<strong>babel-loader</strong>,&nbsp;&nbsp;<strong>@babel&#x2F;core</strong>,&nbsp;&nbsp;<strong>@babel&#x2F;preset-env</strong>加载器。<br>安装加载器</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pnpm install --save-dev babel-loader @babel/core @babel/preset-env</span><br></pre></td></tr></table></figure>
+<p>并在webpack.config.js中做如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">	<span class="attr">rules</span>: [&#123;</span><br><span class="line">      	<span class="attr">test</span>: <span class="regexp">/\.m?js$/</span>,</span><br><span class="line">      	<span class="attr">exclude</span>: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">      	<span class="attr">use</span>: &#123;</span><br><span class="line">        	<span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">        	<span class="attr">options</span>: &#123;</span><br><span class="line">          	<span class="attr">presets</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行webpack进行打包，打开在dist文件中生成的main.js文件能看到ES6代码被成功转译为es5代码。</p>
+]]></content>
+      <categories>
+        <category>项目搭建</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
 </search>
