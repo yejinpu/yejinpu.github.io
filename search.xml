@@ -928,4 +928,24 @@ const命令用来声明常量，一定要初始化。
         <tag>ES6</tag>
       </tags>
   </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/fifteen.html</url>
+    <content><![CDATA[<h1 id="一、基础正则匹配"><a href="#一、基础正则匹配" class="headerlink" title="一、基础正则匹配"></a>一、基础正则匹配</h1><h2 id="1-1-基础写法"><a href="#1-1-基础写法" class="headerlink" title="1.1 基础写法"></a>1.1 基础写法</h2><p>以下三个表达式创建相同的正则表达式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/ab+c/i;                 // 直接书写</span><br><span class="line">new RegExp(/ab+c/, &quot;i&quot;); // 字面量</span><br><span class="line">new RegExp(&quot;ab+c&quot;, &quot;i&quot;); // 构造函数</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-匹配规则"><a href="#1-2-匹配规则" class="headerlink" title="1.2 匹配规则"></a>1.2 匹配规则</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">^:输入字符开始的位置；\:转义   \n：转义后为换行</span><br><span class="line">$:输入字符结束位置；          \/:斜杠转义才表示斜杠</span><br><span class="line">.:除了\n以外的任意一个字符(不会匹配换行)；\.才表示点或者用括号括起来</span><br><span class="line"></span><br><span class="line">*：前面一个子表达式重复0次到多次；a*</span><br><span class="line">+：前面一个子表达式重复1次到多次；（ab）+：ab重复一次到多次</span><br><span class="line">？：前面一个子表达式重复0次到1次；a？</span><br><span class="line"></span><br><span class="line">&#123;n&#125;：前面一个子表达式重复n次；a&#123;3&#125;</span><br><span class="line">&#123;n,m&#125;:前面一个子表达式重复n次到m次；a&#123;2,5&#125;</span><br><span class="line">&#123;n，&#125;：前面一个子表达式至少重复n次到多次；a&#123;2，&#125;         </span><br><span class="line"></span><br><span class="line">[a-z]:表示中括号里a到z的任意一个字符；[0-9]范围      （数字只能0-9之间的，不能[18-99]）</span><br><span class="line">[abc89]:表示中括号里的任意一个字符；</span><br><span class="line"></span><br><span class="line">\w:表示a-z，A-Z，0-9，_中的任意一个字符[a-zA-Z0-9]</span><br><span class="line">\W:表示非[a-zA-Z0-9]的字符</span><br><span class="line">\s:空格</span><br><span class="line">\S:非空格</span><br><span class="line">\d：表示0-9之间任意一个数字[0-9]      </span><br><span class="line">\D:表示非数字             </span><br><span class="line">|：或</span><br><span class="line">（）：优先级  (1|2|3|4|5)他们中的一个，括号内为一整个表达式</span><br><span class="line"></span><br><span class="line">g：全局匹配</span><br><span class="line">i：不区分大小写</span><br><span class="line">\:转义</span><br><span class="line">m：多行匹配</span><br><span class="line">s：允许.匹配所有行</span><br></pre></td></tr></table></figure>
+<h1 id="二、正则方法使用"><a href="#二、正则方法使用" class="headerlink" title="二、正则方法使用"></a>二、正则方法使用</h1><h2 id="2-1-match直接获取匹配结果"><a href="#2-1-match直接获取匹配结果" class="headerlink" title="2.1 match直接获取匹配结果"></a>2.1 <code>match</code>直接获取匹配结果</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;abc&quot;.match(/a/);</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-matchAll获取匹配的所有项"><a href="#2-2-matchAll获取匹配的所有项" class="headerlink" title="2.2 matchAll获取匹配的所有项"></a>2.2 <code>matchAll</code>获取匹配的所有项</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;abc&quot;.matchAll(/a/);</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-replace用替换器替换相应匹配项后的新字符串"><a href="#2-3-replace用替换器替换相应匹配项后的新字符串" class="headerlink" title="2.3 replace用替换器替换相应匹配项后的新字符串"></a>2.3 <code>replace</code>用替换器替换相应匹配项后的新字符串</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;abc&quot;.replace(/a/, &quot;A&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-search查找字符串的位置索引。没找到返回-1。"><a href="#2-4-search查找字符串的位置索引。没找到返回-1。" class="headerlink" title="2.4 search查找字符串的位置索引。没找到返回 -1。"></a>2.4 <code>search</code>查找字符串的位置索引。没找到返回 -1。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;abc&quot;.search(/a/);</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-test是否与指定的字符串匹配"><a href="#2-5-test是否与指定的字符串匹配" class="headerlink" title="2.5 test是否与指定的字符串匹配"></a>2.5 <code>test</code>是否与指定的字符串匹配</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/a/.test(&quot;abc&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="2-6-exec直接获取匹配结果-包含捕获组"><a href="#2-6-exec直接获取匹配结果-包含捕获组" class="headerlink" title="2.6 exec直接获取匹配结果(包含捕获组)"></a>2.6 <code>exec</code>直接获取匹配结果(包含捕获组)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/a/.exec(&quot;abc&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="2-7-toString将正则表达式转化为字符串"><a href="#2-7-toString将正则表达式转化为字符串" class="headerlink" title="2.7 toString将正则表达式转化为字符串"></a>2.7 <code>toString</code>将正则表达式转化为字符串</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/a/.toString();   // &#x27;/a/&#x27;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
 </search>
