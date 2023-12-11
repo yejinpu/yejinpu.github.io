@@ -87,7 +87,7 @@
 <meta property="og:description" content="1、简介  只需一行命令，快速图片优化、生成动画文件，支持效果预览。  一键式: 图片文件批量序列化重命名，生成帧动画文件，支持预览 性能佳: 支持相同图片复用✓ 图片空白裁剪✓ 合图优化✓ 图片压缩✓ 图片空白拆分优化✓ 图片像素差优化✓ 多倍图适配✓ 多模板: 内置多种文件输出模板，支持自定义模板  2、安装1npm i gka -g 3、使用1gka &lt;dir&gt; [options">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-08-15T04:13:11.000Z">
-<meta property="article:modified_time" content="2023-11-17T08:03:09.606Z">
+<meta property="article:modified_time" content="2023-12-11T07:40:01.085Z">
 <meta property="article:author" content="叶金濮">
 <meta property="article:tag" content="photo">
 <meta name="twitter:card" content="summary">
@@ -387,11 +387,11 @@
 <li>性能佳: 支持相同图片复用✓ 图片空白裁剪✓ 合图优化✓ 图片压缩✓ 图片空白拆分优化✓ 图片像素差优化✓ 多倍图适配✓</li>
 <li>多模板: 内置多种文件输出模板，支持自定义模板</li>
 </ul>
-<h1 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gka -g</span><br></pre></td></tr></table></figure>
-<h1 id="3、使用"><a href="#3、使用" class="headerlink" title="3、使用"></a>3、使用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka &lt;dir&gt; [options]</span><br></pre></td></tr></table></figure>
-<h1 id="4、Option参数选项"><a href="#4、Option参数选项" class="headerlink" title="4、Option参数选项"></a>4、Option参数选项</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-d, --dir &lt;string&gt; # 图片文件夹地址</span><br><span class="line">-u, --unique [boolean] # 开启相同图片复用优化</span><br><span class="line">-c, --crop [boolean] # 开启空白裁剪优化</span><br><span class="line">-s, --sprites [boolean] # 开启合图优化</span><br><span class="line">-m, --mini [boolean] # 开启图片压缩</span><br><span class="line">-p, --prefix [string] # 文件重命名前缀</span><br><span class="line">-t, --template &lt;string&gt; # 生成动画文件模板 默认 css ，可选模见 Templates 模板列表</span><br><span class="line">-f, --frameduration &lt;number&gt; # 每帧时长，默认 0.04</span><br><span class="line">-i, --info [boolean] # 开启输出信息文件</span><br><span class="line">-o, --output &lt;string&gt; # 指定生成目录地址</span><br><span class="line">-a, --algorithm &lt;string&gt; # 合图布局模式 默认 left-right，可选 binary-tree | top-down ..</span><br><span class="line">--bgcolor &lt;string&gt; # 为图片增加背景色，可选，支持格式：&#x27;rgb(255,205,44)&#x27;、 &#x27;#ffcd2c&#x27;</span><br><span class="line">--count &lt;number&gt; # 生成多合图，指定几张图片合成一张合图，可选</span><br><span class="line">--ratio &lt;number&gt; # 生成指定的N倍图动画，如 --ratio 2 支持retina屏幕的2倍图动画， 可选</span><br><span class="line">--split [boolean] # 开启图片空白拆分优化，与 -t canvas 结合使用</span><br><span class="line">--diff [boolean] # 开启图片像素差优化，与 -t canvas 结合使用</span><br></pre></td></tr></table></figure>
+<h1 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gka -g</span><br></pre></td></tr></table></figure>
+<h1 id="3、使用"><a href="#3、使用" class="headerlink" title="3、使用"></a>3、使用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka &lt;dir&gt; [options]</span><br></pre></td></tr></table></figure>
+<h1 id="4、Option参数选项"><a href="#4、Option参数选项" class="headerlink" title="4、Option参数选项"></a>4、Option参数选项</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-d, --dir &lt;string&gt; # 图片文件夹地址</span><br><span class="line">-u, --unique [boolean] # 开启相同图片复用优化</span><br><span class="line">-c, --crop [boolean] # 开启空白裁剪优化</span><br><span class="line">-s, --sprites [boolean] # 开启合图优化</span><br><span class="line">-m, --mini [boolean] # 开启图片压缩</span><br><span class="line">-p, --prefix [string] # 文件重命名前缀</span><br><span class="line">-t, --template &lt;string&gt; # 生成动画文件模板 默认 css ，可选模见 <span class="title class_">Templates</span> 模板列表</span><br><span class="line">-f, --frameduration &lt;number&gt; # 每帧时长，默认 <span class="number">0.04</span></span><br><span class="line">-i, --info [boolean] # 开启输出信息文件</span><br><span class="line">-o, --output &lt;string&gt; # 指定生成目录地址</span><br><span class="line">-a, --algorithm &lt;string&gt; # 合图布局模式 默认 left-right，可选 binary-tree | top-down ..</span><br><span class="line">--bgcolor &lt;string&gt; # 为图片增加背景色，可选，支持格式：<span class="string">&#x27;rgb(255,205,44)&#x27;</span>、 <span class="string">&#x27;#ffcd2c&#x27;</span></span><br><span class="line">--count &lt;number&gt; # 生成多合图，指定几张图片合成一张合图，可选</span><br><span class="line">--ratio &lt;number&gt; # 生成指定的N倍图动画，如 --ratio <span class="number">2</span> 支持retina屏幕的<span class="number">2</span>倍图动画， 可选</span><br><span class="line">--split [boolean] # 开启图片空白拆分优化，与 -t canvas 结合使用</span><br><span class="line">--diff [boolean] # 开启图片像素差优化，与 -t canvas 结合使用</span><br></pre></td></tr></table></figure>
 <h1 id="5、Templates模板列表"><a href="#5、Templates模板列表" class="headerlink" title="5、Templates模板列表"></a>5、<code>Templates</code>模板列表</h1><p>  <strong>使用方式</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka 图片目录 -t 模板名</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka 图片目录 -t 模板名</span><br></pre></td></tr></table></figure>
 <p><strong>内置的模板列表</strong>  </p>
 <ul>
 <li><p>css</p>
@@ -446,17 +446,17 @@
 </ul>
 <p><strong>增加模板</strong>  </p>
 <ul>
-<li>模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gka-tpl-模板名 -g</span><br></pre></td></tr></table></figure></li>
+<li>模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gka-tpl-模板名 -g</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="6、使用示例"><a href="#6、使用示例" class="headerlink" title="6、使用示例"></a>6、使用示例</h1><ul>
 <li><p>对 E:\img 目录中的图片进行处理。</p>
 </li>
 <li><p>快速生成帧动画  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka E:\img</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka <span class="attr">E</span>:\img</span><br></pre></td></tr></table></figure></li>
 <li><p>进行图片去重、合图优化，输出 css 动画文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka E:\img -us</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka <span class="attr">E</span>:\img -us</span><br></pre></td></tr></table></figure></li>
 <li><p>进行图片去重、空白裁剪、合图优化，使用 canvas 模板，输出 canvas 动画文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka E:\img -ucs -t canvas</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gka <span class="attr">E</span>:\img -ucs -t canvas</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="7、结束"><a href="#7、结束" class="headerlink" title="7、结束"></a>7、结束</h1>
       
@@ -611,7 +611,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +633,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
