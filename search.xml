@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>npm install安装的四种用法</title>
+    <url>/18.html</url>
+    <content><![CDATA[<ul>
+<li><p><code>npm install xxx</code><br>安装项目到项目目录下，会将模块依赖写入生产环境dependencies。</p>
+</li>
+<li><p><code>npm install xxx -g</code><br>-g的意思是将模块安装到全局，不是安装到当前目录的项目下。</p>
+</li>
+<li><p><code>npm install xxx -save</code><br>–save 等同于-S (常用，可保存在package.json文件中)<br>-S, –save 安装包信息将加入到生产环境dependencies。</p>
+</li>
+<li><p><code>npm install xxx -save-dev</code><br>–save-dev 等同于 -D<br>-D, –save-dev 安装包信息将加入到开发环境devDependencies。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>命令行</category>
+      </categories>
+      <tags>
+        <tag>NPM</tag>
+        <tag>NodeJS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Express</title>
     <url>/17.html</url>
     <content><![CDATA[<h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><ul>
@@ -24,25 +46,16 @@
       </tags>
   </entry>
   <entry>
-    <title>npm install安装的四种用法</title>
-    <url>/18.html</url>
-    <content><![CDATA[<ul>
-<li><p><code>npm install xxx</code><br>安装项目到项目目录下，会将模块依赖写入生产环境dependencies。</p>
-</li>
-<li><p><code>npm install xxx -g</code><br>-g的意思是将模块安装到全局，不是安装到当前目录的项目下。</p>
-</li>
-<li><p><code>npm install xxx -save</code><br>–save 等同于-S (常用，可保存在package.json文件中)<br>-S, –save 安装包信息将加入到生产环境dependencies。</p>
-</li>
-<li><p><code>npm install xxx -save-dev</code><br>–save-dev 等同于 -D<br>-D, –save-dev 安装包信息将加入到开发环境devDependencies。</p>
-</li>
-</ul>
-]]></content>
+    <title>Nodemon</title>
+    <url>/19.html</url>
+    <content><![CDATA[<h1 id="一、下载nodemon"><a href="#一、下载nodemon" class="headerlink" title="一、下载nodemon"></a>一、下载<code>nodemon</code></h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
+<h1 id="二、使用nodemon"><a href="#二、使用nodemon" class="headerlink" title="二、使用nodemon"></a>二、使用<code>nodemon</code></h1><p>当使用Node.js编写代码的时候，需要不停修改代价，然后手动关闭项目再重新启动。<br>现在我们将<code>node</code>命令替换为<code>nodemon</code>命令，从而实现自动重启项目。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">node server.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将上面的终端命令，替换为下面的终端命令，即可实现自动重启。</span></span><br><span class="line"></span><br><span class="line">nodemon server.<span class="property">js</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>命令行</category>
       </categories>
       <tags>
         <tag>NodeJS</tag>
-        <tag>NPM</tag>
       </tags>
   </entry>
   <entry>
@@ -168,6 +181,67 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue1.0与2.0版本的区别</title>
+    <url>/nine.html</url>
+    <content><![CDATA[<p><strong>高层级的变化</strong><br>&emsp;&emsp;1、模板解析器不再依赖于DOM（除非你使用真正的DOM作为模板），因此只要你使用字符串模板，你将不再受到任何1.0版本中的解析限制。但是，如果你依赖在存在的内容中挂载一个元素作为模板（使用el元素），你将依然受到这些限制。</p>
+<p>&emsp;&emsp;2、编译器（将字符串模板转换为渲染方法的部分）和运行时间现在能够被分开。这里有两种不同的构建：  </p>
+<ul>
+<li><p>独立构建：包括编译并且运行。这种方式和vue 1.0几乎完全一样。</p>
+</li>
+<li><p>运行时编译：由于它不包括编译器，在编译步骤时要么预编译模板，要么手动编写渲染功能。npm包默认导出这个版本，那么你需要有一个编译的过程（使用Browserify或Webpack ）,从中vueify或vue-loader将可以进行模板预编译。</p>
+</li>
+</ul>
+<p><strong>全局配置</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Vue.config.silent</span><br><span class="line"></span><br><span class="line">Vue.config.optionMergeStrategies</span><br><span class="line"></span><br><span class="line">Vue.config.devtools</span><br><span class="line"></span><br><span class="line">Vue.config.errorHandler（新API，全局的挂钩用于在组件渲染和监控的时候处理未捕获的错误）</span><br><span class="line"></span><br><span class="line">Vue.config.keyCodes（新API，为v-on配置自定义的key的别名）</span><br><span class="line"></span><br><span class="line">Vue.config.debug（已丢弃）</span><br><span class="line"></span><br><span class="line">Vue.config.async（已丢弃）</span><br><span class="line"></span><br><span class="line">Vue.config.delimiters(已丢弃)</span><br><span class="line"></span><br><span class="line">Vue.config.unsafeDelimiters（已丢弃，使用v-html）  </span><br></pre></td></tr></table></figure>
+
+<p><strong>全局API</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Vue.extend</span><br><span class="line"></span><br><span class="line">Vue.nextTick</span><br><span class="line"></span><br><span class="line">Vue.set</span><br><span class="line"></span><br><span class="line">Vue.delete</span><br><span class="line"></span><br><span class="line">Vue.directive</span><br><span class="line"></span><br><span class="line">Vue.component</span><br><span class="line"></span><br><span class="line">Vue.use</span><br><span class="line"></span><br><span class="line">Vue.mixin</span><br><span class="line"></span><br><span class="line">Vue.compile（新API，只能用于独立版本构建）</span><br><span class="line"></span><br><span class="line">Vue.transition</span><br><span class="line"></span><br><span class="line">     - stagger（已丢弃，在el上设置</span><br><span class="line"></span><br><span class="line">Vue.filter</span><br><span class="line"></span><br><span class="line">Vue.elementDirective（已丢弃，使用组件）</span><br><span class="line"></span><br><span class="line">Vue.partial （已丢弃，使用功能组件）</span><br></pre></td></tr></table></figure>
+
+<p><strong>选项</strong>  </p>
+<p>data  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data</span><br><span class="line"></span><br><span class="line">     - props</span><br><span class="line">      </span><br><span class="line">     - prop</span><br><span class="line">      </span><br><span class="line">     - default</span><br><span class="line">      </span><br><span class="line">     - coerce（已丢弃，如果你需要转换prop,请使用compute属性）</span><br><span class="line">      </span><br><span class="line">     - prop binding modes（已丢弃，v-model在组件上可以工作</span><br><span class="line"></span><br><span class="line">propsData（新API）只能用于实例</span><br><span class="line"></span><br><span class="line">computed</span><br><span class="line"></span><br><span class="line">methods</span><br><span class="line"></span><br><span class="line">watch</span><br></pre></td></tr></table></figure>
+
+<p>DOM  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">el</span><br><span class="line"></span><br><span class="line">template</span><br><span class="line"></span><br><span class="line">render（新API）</span><br><span class="line"></span><br><span class="line">replace（已丢弃，组件现在必须有一个根元素）  </span><br></pre></td></tr></table></figure>
+
+<p>生命周期钩子  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">init（已丢弃，请使用beforeCreate）</span><br><span class="line"></span><br><span class="line">created</span><br><span class="line"></span><br><span class="line">beforeDestroy</span><br><span class="line"></span><br><span class="line">destroyed</span><br><span class="line"></span><br><span class="line">beforeMount(新API)</span><br><span class="line"></span><br><span class="line">mounted（新API）</span><br><span class="line"></span><br><span class="line">beforeUpdate（新API）</span><br><span class="line"></span><br><span class="line">updated（新API）</span><br><span class="line"></span><br><span class="line">activated(新API，用于keep-alive)</span><br><span class="line"></span><br><span class="line">deactivated（新API用于keep-alive）</span><br><span class="line"></span><br><span class="line">ready（已丢弃，使用mounted）</span><br><span class="line"></span><br><span class="line">activate（已丢弃，迁移到vue-router）</span><br><span class="line"></span><br><span class="line">beforeCompile（已丢弃，使用created）</span><br><span class="line"></span><br><span class="line">compiled（已丢弃，使用mounted）</span><br><span class="line"></span><br><span class="line">attached（已丢弃）</span><br><span class="line"></span><br><span class="line">detached（已丢弃，同上）  </span><br></pre></td></tr></table></figure>
+
+<p>Assets  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">directives</span><br><span class="line"></span><br><span class="line">components</span><br><span class="line"></span><br><span class="line">transitions</span><br><span class="line"></span><br><span class="line">filters</span><br><span class="line"></span><br><span class="line">partials（已丢弃）</span><br><span class="line"></span><br><span class="line">elementDirectives（已丢弃）   </span><br></pre></td></tr></table></figure>
+
+<p>杂项  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">parent</span><br><span class="line"></span><br><span class="line">mixins</span><br><span class="line"></span><br><span class="line">name</span><br><span class="line"></span><br><span class="line">extends</span><br><span class="line"></span><br><span class="line">delimiters（新API，替代原版的全局配置选项，只在独立构建中可用）</span><br><span class="line"></span><br><span class="line">functional（新API）</span><br><span class="line"></span><br><span class="line">events（已丢弃）  </span><br></pre></td></tr></table></figure>
+
+<p><strong>实例方法</strong>  </p>
+<p>data  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$watch</span><br><span class="line"></span><br><span class="line">vm.$get（已丢弃，直接检索值）</span><br><span class="line"></span><br><span class="line">vm.$set（已丢弃，使用Vue.set）</span><br><span class="line"></span><br><span class="line">vm.$delete（已丢弃，使用Vue.delete）</span><br><span class="line"></span><br><span class="line">vm.$eval（已丢弃，没有真正的使用）</span><br><span class="line"></span><br><span class="line">vm.$interpolate（已丢弃，同上）</span><br><span class="line"></span><br><span class="line">vm.$log（已丢弃，使用devtools）  </span><br></pre></td></tr></table></figure>
+
+<p>events  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$on</span><br><span class="line"></span><br><span class="line">vm.$once</span><br><span class="line"></span><br><span class="line">vm.$off</span><br><span class="line"></span><br><span class="line">vm.$emit</span><br><span class="line"></span><br><span class="line">vm.$dispatch（已丢弃，使用全局的事件或使用vuex，见下面）</span><br><span class="line"></span><br><span class="line">vm.$broadcast（已丢弃，同上）  </span><br></pre></td></tr></table></figure>
+
+<p>DOM  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$nextTick</span><br><span class="line"></span><br><span class="line">vm.$appendTo（已丢弃，在 vm.$el上使用本地API）</span><br><span class="line"></span><br><span class="line">vm.$before（已丢弃）</span><br><span class="line"></span><br><span class="line">vm.$after（已丢弃）</span><br><span class="line"></span><br><span class="line">vm.$remove（已丢弃）  </span><br></pre></td></tr></table></figure>
+
+<p>生命周期  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$mount</span><br><span class="line"></span><br><span class="line">vm.$destroy  </span><br></pre></td></tr></table></figure>
+
+<p><strong>指令</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">v-text</span><br><span class="line"></span><br><span class="line">v-html（注意&#123;&#123;&#123; &#125;&#125;&#125; 被丢弃）</span><br><span class="line"></span><br><span class="line">v-if</span><br><span class="line"></span><br><span class="line">v-show</span><br><span class="line"></span><br><span class="line">v-else</span><br><span class="line"></span><br><span class="line">v-for</span><br><span class="line"></span><br><span class="line">    - key (替代 track-by)</span><br><span class="line">  </span><br><span class="line">    - object v-for</span><br><span class="line">  </span><br><span class="line">    - range v-for</span><br><span class="line">  </span><br><span class="line">    - 参数顺序更新：数组中使用(value, index) in arr，对象中使用(value, key, index) in obj</span><br><span class="line">  </span><br><span class="line">    - $index和$key被丢弃</span><br><span class="line"></span><br><span class="line">v-on</span><br><span class="line"></span><br><span class="line">    - modifiers</span><br><span class="line">    </span><br><span class="line">    - on child component</span><br><span class="line">    </span><br><span class="line">    - 自定义键码，目前版本Vue.config.keyCodes代替原来的Vue.directive(&#x27;on&#x27;).keyCodes</span><br><span class="line"></span><br><span class="line">v-bind</span><br><span class="line"></span><br><span class="line">    - 作为prop</span><br><span class="line">    </span><br><span class="line">    - xlink</span><br><span class="line">    </span><br><span class="line">    - 绑定对象</span><br><span class="line"></span><br><span class="line">v-bind:style</span><br><span class="line"></span><br><span class="line">    - prefix sniffing</span><br><span class="line"></span><br><span class="line">v-bind:class</span><br><span class="line"></span><br><span class="line">v-model</span><br><span class="line"></span><br><span class="line">    - lazy (as modifier)</span><br><span class="line">  </span><br><span class="line">    - number (as modifier)</span><br><span class="line">  </span><br><span class="line">    - ignoring composition events</span><br><span class="line">  </span><br><span class="line">    - debounce（已丢弃，使用v-on:input）</span><br><span class="line"></span><br><span class="line">v-cloak</span><br><span class="line"></span><br><span class="line">v-pre</span><br><span class="line"></span><br><span class="line">v-once（新API）</span><br><span class="line"></span><br><span class="line">v-ref（已丢弃，现在只是一个特殊的属性ref）</span><br><span class="line"></span><br><span class="line">v-el（和ref合并）  </span><br></pre></td></tr></table></figure>
+
+<p><strong>特殊组件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;component&gt;</span><br><span class="line"></span><br><span class="line">    - :is</span><br><span class="line">    </span><br><span class="line">    - async组件</span><br><span class="line">    </span><br><span class="line">    - inline-template</span><br><span class="line"></span><br><span class="line">&lt;transition&gt;</span><br><span class="line"></span><br><span class="line">&lt;transition-group&gt;</span><br><span class="line"></span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;slot&gt;</span><br><span class="line"></span><br><span class="line">partial（已丢弃）  </span><br></pre></td></tr></table></figure>
+
+<p><strong>特殊属性</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">key</span><br><span class="line"></span><br><span class="line">ref</span><br><span class="line"></span><br><span class="line">slot  </span><br></pre></td></tr></table></figure>
+
+<p><strong>服务器端渲染</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">renderToString</span><br><span class="line"></span><br><span class="line">renderToStream</span><br><span class="line"></span><br><span class="line">client-side hydration  </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+  </entry>
+  <entry>
     <title>webpack技术点汇总</title>
     <url>/fourteen.html</url>
     <content><![CDATA[<h1 id="一、基本项目框架"><a href="#一、基本项目框架" class="headerlink" title="一、基本项目框架"></a>一、基本项目框架</h1><h2 id="1-1-安装node"><a href="#1-1-安装node" class="headerlink" title="1.1 安装node"></a>1.1 安装node</h2><p>去官网下载稳定版本node即可。</p>
@@ -249,67 +323,6 @@
       <tags>
         <tag>webpack</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Vue1.0与2.0版本的区别</title>
-    <url>/nine.html</url>
-    <content><![CDATA[<p><strong>高层级的变化</strong><br>&emsp;&emsp;1、模板解析器不再依赖于DOM（除非你使用真正的DOM作为模板），因此只要你使用字符串模板，你将不再受到任何1.0版本中的解析限制。但是，如果你依赖在存在的内容中挂载一个元素作为模板（使用el元素），你将依然受到这些限制。</p>
-<p>&emsp;&emsp;2、编译器（将字符串模板转换为渲染方法的部分）和运行时间现在能够被分开。这里有两种不同的构建：  </p>
-<ul>
-<li><p>独立构建：包括编译并且运行。这种方式和vue 1.0几乎完全一样。</p>
-</li>
-<li><p>运行时编译：由于它不包括编译器，在编译步骤时要么预编译模板，要么手动编写渲染功能。npm包默认导出这个版本，那么你需要有一个编译的过程（使用Browserify或Webpack ）,从中vueify或vue-loader将可以进行模板预编译。</p>
-</li>
-</ul>
-<p><strong>全局配置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Vue.config.silent</span><br><span class="line"></span><br><span class="line">Vue.config.optionMergeStrategies</span><br><span class="line"></span><br><span class="line">Vue.config.devtools</span><br><span class="line"></span><br><span class="line">Vue.config.errorHandler（新API，全局的挂钩用于在组件渲染和监控的时候处理未捕获的错误）</span><br><span class="line"></span><br><span class="line">Vue.config.keyCodes（新API，为v-on配置自定义的key的别名）</span><br><span class="line"></span><br><span class="line">Vue.config.debug（已丢弃）</span><br><span class="line"></span><br><span class="line">Vue.config.async（已丢弃）</span><br><span class="line"></span><br><span class="line">Vue.config.delimiters(已丢弃)</span><br><span class="line"></span><br><span class="line">Vue.config.unsafeDelimiters（已丢弃，使用v-html）  </span><br></pre></td></tr></table></figure>
-
-<p><strong>全局API</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Vue.extend</span><br><span class="line"></span><br><span class="line">Vue.nextTick</span><br><span class="line"></span><br><span class="line">Vue.set</span><br><span class="line"></span><br><span class="line">Vue.delete</span><br><span class="line"></span><br><span class="line">Vue.directive</span><br><span class="line"></span><br><span class="line">Vue.component</span><br><span class="line"></span><br><span class="line">Vue.use</span><br><span class="line"></span><br><span class="line">Vue.mixin</span><br><span class="line"></span><br><span class="line">Vue.compile（新API，只能用于独立版本构建）</span><br><span class="line"></span><br><span class="line">Vue.transition</span><br><span class="line"></span><br><span class="line">     - stagger（已丢弃，在el上设置</span><br><span class="line"></span><br><span class="line">Vue.filter</span><br><span class="line"></span><br><span class="line">Vue.elementDirective（已丢弃，使用组件）</span><br><span class="line"></span><br><span class="line">Vue.partial （已丢弃，使用功能组件）</span><br></pre></td></tr></table></figure>
-
-<p><strong>选项</strong>  </p>
-<p>data  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data</span><br><span class="line"></span><br><span class="line">     - props</span><br><span class="line">      </span><br><span class="line">     - prop</span><br><span class="line">      </span><br><span class="line">     - default</span><br><span class="line">      </span><br><span class="line">     - coerce（已丢弃，如果你需要转换prop,请使用compute属性）</span><br><span class="line">      </span><br><span class="line">     - prop binding modes（已丢弃，v-model在组件上可以工作</span><br><span class="line"></span><br><span class="line">propsData（新API）只能用于实例</span><br><span class="line"></span><br><span class="line">computed</span><br><span class="line"></span><br><span class="line">methods</span><br><span class="line"></span><br><span class="line">watch</span><br></pre></td></tr></table></figure>
-
-<p>DOM  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">el</span><br><span class="line"></span><br><span class="line">template</span><br><span class="line"></span><br><span class="line">render（新API）</span><br><span class="line"></span><br><span class="line">replace（已丢弃，组件现在必须有一个根元素）  </span><br></pre></td></tr></table></figure>
-
-<p>生命周期钩子  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">init（已丢弃，请使用beforeCreate）</span><br><span class="line"></span><br><span class="line">created</span><br><span class="line"></span><br><span class="line">beforeDestroy</span><br><span class="line"></span><br><span class="line">destroyed</span><br><span class="line"></span><br><span class="line">beforeMount(新API)</span><br><span class="line"></span><br><span class="line">mounted（新API）</span><br><span class="line"></span><br><span class="line">beforeUpdate（新API）</span><br><span class="line"></span><br><span class="line">updated（新API）</span><br><span class="line"></span><br><span class="line">activated(新API，用于keep-alive)</span><br><span class="line"></span><br><span class="line">deactivated（新API用于keep-alive）</span><br><span class="line"></span><br><span class="line">ready（已丢弃，使用mounted）</span><br><span class="line"></span><br><span class="line">activate（已丢弃，迁移到vue-router）</span><br><span class="line"></span><br><span class="line">beforeCompile（已丢弃，使用created）</span><br><span class="line"></span><br><span class="line">compiled（已丢弃，使用mounted）</span><br><span class="line"></span><br><span class="line">attached（已丢弃）</span><br><span class="line"></span><br><span class="line">detached（已丢弃，同上）  </span><br></pre></td></tr></table></figure>
-
-<p>Assets  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">directives</span><br><span class="line"></span><br><span class="line">components</span><br><span class="line"></span><br><span class="line">transitions</span><br><span class="line"></span><br><span class="line">filters</span><br><span class="line"></span><br><span class="line">partials（已丢弃）</span><br><span class="line"></span><br><span class="line">elementDirectives（已丢弃）   </span><br></pre></td></tr></table></figure>
-
-<p>杂项  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">parent</span><br><span class="line"></span><br><span class="line">mixins</span><br><span class="line"></span><br><span class="line">name</span><br><span class="line"></span><br><span class="line">extends</span><br><span class="line"></span><br><span class="line">delimiters（新API，替代原版的全局配置选项，只在独立构建中可用）</span><br><span class="line"></span><br><span class="line">functional（新API）</span><br><span class="line"></span><br><span class="line">events（已丢弃）  </span><br></pre></td></tr></table></figure>
-
-<p><strong>实例方法</strong>  </p>
-<p>data  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$watch</span><br><span class="line"></span><br><span class="line">vm.$get（已丢弃，直接检索值）</span><br><span class="line"></span><br><span class="line">vm.$set（已丢弃，使用Vue.set）</span><br><span class="line"></span><br><span class="line">vm.$delete（已丢弃，使用Vue.delete）</span><br><span class="line"></span><br><span class="line">vm.$eval（已丢弃，没有真正的使用）</span><br><span class="line"></span><br><span class="line">vm.$interpolate（已丢弃，同上）</span><br><span class="line"></span><br><span class="line">vm.$log（已丢弃，使用devtools）  </span><br></pre></td></tr></table></figure>
-
-<p>events  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$on</span><br><span class="line"></span><br><span class="line">vm.$once</span><br><span class="line"></span><br><span class="line">vm.$off</span><br><span class="line"></span><br><span class="line">vm.$emit</span><br><span class="line"></span><br><span class="line">vm.$dispatch（已丢弃，使用全局的事件或使用vuex，见下面）</span><br><span class="line"></span><br><span class="line">vm.$broadcast（已丢弃，同上）  </span><br></pre></td></tr></table></figure>
-
-<p>DOM  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$nextTick</span><br><span class="line"></span><br><span class="line">vm.$appendTo（已丢弃，在 vm.$el上使用本地API）</span><br><span class="line"></span><br><span class="line">vm.$before（已丢弃）</span><br><span class="line"></span><br><span class="line">vm.$after（已丢弃）</span><br><span class="line"></span><br><span class="line">vm.$remove（已丢弃）  </span><br></pre></td></tr></table></figure>
-
-<p>生命周期  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm.$mount</span><br><span class="line"></span><br><span class="line">vm.$destroy  </span><br></pre></td></tr></table></figure>
-
-<p><strong>指令</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">v-text</span><br><span class="line"></span><br><span class="line">v-html（注意&#123;&#123;&#123; &#125;&#125;&#125; 被丢弃）</span><br><span class="line"></span><br><span class="line">v-if</span><br><span class="line"></span><br><span class="line">v-show</span><br><span class="line"></span><br><span class="line">v-else</span><br><span class="line"></span><br><span class="line">v-for</span><br><span class="line"></span><br><span class="line">    - key (替代 track-by)</span><br><span class="line">  </span><br><span class="line">    - object v-for</span><br><span class="line">  </span><br><span class="line">    - range v-for</span><br><span class="line">  </span><br><span class="line">    - 参数顺序更新：数组中使用(value, index) in arr，对象中使用(value, key, index) in obj</span><br><span class="line">  </span><br><span class="line">    - $index和$key被丢弃</span><br><span class="line"></span><br><span class="line">v-on</span><br><span class="line"></span><br><span class="line">    - modifiers</span><br><span class="line">    </span><br><span class="line">    - on child component</span><br><span class="line">    </span><br><span class="line">    - 自定义键码，目前版本Vue.config.keyCodes代替原来的Vue.directive(&#x27;on&#x27;).keyCodes</span><br><span class="line"></span><br><span class="line">v-bind</span><br><span class="line"></span><br><span class="line">    - 作为prop</span><br><span class="line">    </span><br><span class="line">    - xlink</span><br><span class="line">    </span><br><span class="line">    - 绑定对象</span><br><span class="line"></span><br><span class="line">v-bind:style</span><br><span class="line"></span><br><span class="line">    - prefix sniffing</span><br><span class="line"></span><br><span class="line">v-bind:class</span><br><span class="line"></span><br><span class="line">v-model</span><br><span class="line"></span><br><span class="line">    - lazy (as modifier)</span><br><span class="line">  </span><br><span class="line">    - number (as modifier)</span><br><span class="line">  </span><br><span class="line">    - ignoring composition events</span><br><span class="line">  </span><br><span class="line">    - debounce（已丢弃，使用v-on:input）</span><br><span class="line"></span><br><span class="line">v-cloak</span><br><span class="line"></span><br><span class="line">v-pre</span><br><span class="line"></span><br><span class="line">v-once（新API）</span><br><span class="line"></span><br><span class="line">v-ref（已丢弃，现在只是一个特殊的属性ref）</span><br><span class="line"></span><br><span class="line">v-el（和ref合并）  </span><br></pre></td></tr></table></figure>
-
-<p><strong>特殊组件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;component&gt;</span><br><span class="line"></span><br><span class="line">    - :is</span><br><span class="line">    </span><br><span class="line">    - async组件</span><br><span class="line">    </span><br><span class="line">    - inline-template</span><br><span class="line"></span><br><span class="line">&lt;transition&gt;</span><br><span class="line"></span><br><span class="line">&lt;transition-group&gt;</span><br><span class="line"></span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;slot&gt;</span><br><span class="line"></span><br><span class="line">partial（已丢弃）  </span><br></pre></td></tr></table></figure>
-
-<p><strong>特殊属性</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">key</span><br><span class="line"></span><br><span class="line">ref</span><br><span class="line"></span><br><span class="line">slot  </span><br></pre></td></tr></table></figure>
-
-<p><strong>服务器端渲染</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">renderToString</span><br><span class="line"></span><br><span class="line">renderToStream</span><br><span class="line"></span><br><span class="line">client-side hydration  </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
   </entry>
   <entry>
     <title>ES6更新汇总（一）</title>
@@ -594,8 +607,8 @@ const命令用来声明常量，一定要初始化。
         <category>命令行</category>
       </categories>
       <tags>
-        <tag>NodeJS</tag>
         <tag>NPM</tag>
+        <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
@@ -644,6 +657,34 @@ const命令用来声明常量，一定要初始化。
       </tags>
   </entry>
   <entry>
+    <title>汇总vue项目基础知识</title>
+    <url>/thirteen.html</url>
+    <content><![CDATA[<p><strong>安装vue-cli</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>如果已经安装了旧版本的vue-cli,需要使用<code>npm uninstall vue-cli -g</code>来卸载掉旧版本。<br>安装后可以输入<code>vue --version</code>来查询安装是否成功。  </p>
+<p><strong>启动服务</strong><br>需要的仅仅是一个App.vue文件，然后在这个App.vue文件目录下运行  </p>
+<pre><code class="javascript">  vue serve
+</code></pre>
+<p>要使用该命令，需要先安装一个扩展插件  </p>
+<pre><code class="javascript">  npm install -g @vue/cli-service-global
+</code></pre>
+<p><strong>打包文件</strong>  </p>
+<pre><code class="javascript">  vue build
+</code></pre>
+<p><strong>创建一个新的项目</strong>  </p>
+<pre><code class="javascript">  vue create 项目名称
+</code></pre>
+<p>会提示你选择一个默认带有<code>eslint</code>，<code>bable</code>的项目还是手动进行配置项目。使用<code>vue create --help</code>可以查看更多帮助命令。  </p>
+<p><strong>图形界面</strong>  </p>
+<pre><code class="javascript">  vue ui
+</code></pre>
+<p>在浏览器打开图形界面页面。</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo + github搭建个人博客</title>
     <url>/ten.html</url>
     <content><![CDATA[<p>&emsp;&emsp;本文仅仅讲述了怎么搭建一个基础的博客，并没有涉及博客内部的功能介绍，比如搜索，评论，访问量统计，SEO之类的…大家自己探索吧。</p>
@@ -684,34 +725,6 @@ const命令用来声明常量，一定要初始化。
         <tag>hexo</tag>
         <tag>github</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>汇总vue项目基础知识</title>
-    <url>/thirteen.html</url>
-    <content><![CDATA[<p><strong>安装vue-cli</strong>  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>如果已经安装了旧版本的vue-cli,需要使用<code>npm uninstall vue-cli -g</code>来卸载掉旧版本。<br>安装后可以输入<code>vue --version</code>来查询安装是否成功。  </p>
-<p><strong>启动服务</strong><br>需要的仅仅是一个App.vue文件，然后在这个App.vue文件目录下运行  </p>
-<pre><code class="javascript">  vue serve
-</code></pre>
-<p>要使用该命令，需要先安装一个扩展插件  </p>
-<pre><code class="javascript">  npm install -g @vue/cli-service-global
-</code></pre>
-<p><strong>打包文件</strong>  </p>
-<pre><code class="javascript">  vue build
-</code></pre>
-<p><strong>创建一个新的项目</strong>  </p>
-<pre><code class="javascript">  vue create 项目名称
-</code></pre>
-<p>会提示你选择一个默认带有<code>eslint</code>，<code>bable</code>的项目还是手动进行配置项目。使用<code>vue create --help</code>可以查看更多帮助命令。  </p>
-<p><strong>图形界面</strong>  </p>
-<pre><code class="javascript">  vue ui
-</code></pre>
-<p>在浏览器打开图形界面页面。</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
   </entry>
   <entry>
     <title>移动端常见的一些兼容性问题</title>
@@ -1017,19 +1030,6 @@ const命令用来声明常量，一定要初始化。
       </categories>
       <tags>
         <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nodemon</title>
-    <url>/19.html</url>
-    <content><![CDATA[<h1 id="一、下载nodemon"><a href="#一、下载nodemon" class="headerlink" title="一、下载nodemon"></a>一、下载<code>nodemon</code></h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
-<h1 id="二、使用nodemon"><a href="#二、使用nodemon" class="headerlink" title="二、使用nodemon"></a>二、使用<code>nodemon</code></h1><p>当使用Node.js编写代码的时候，需要不停修改代价，然后手动关闭项目再重新启动。<br>现在我们将<code>node</code>命令替换为<code>nodemon</code>命令，从而实现自动重启项目。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">node server.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将上面的终端命令，替换为下面的终端命令，即可实现自动重启。</span></span><br><span class="line"></span><br><span class="line">nodemon server.<span class="property">js</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>命令行</category>
-      </categories>
-      <tags>
-        <tag>NodeJS</tag>
       </tags>
   </entry>
 </search>
